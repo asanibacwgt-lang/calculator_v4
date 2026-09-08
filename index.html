@@ -1,122 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)https://asanibacwgt-lang.github.io/Easy_buy_calculator_v3/ -->
-<html lang="ar" dir="rtl"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حاسبة التمويل - EasyBuy</title>
-    <link href="./تجريبي_files/css2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
-
-        /* arabic */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l5qjHrRpiYlJ.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-/* latin */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l5qjHrFpiQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* arabic */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iura6YBj_oCad4k1nzSBC45I.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-/* latin */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iura6YBj_oCad4k1nzGBCw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* arabic */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l8KiHrRpiYlJ.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-/* latin */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l8KiHrFpiQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* arabic */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l4qkHrRpiYlJ.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-/* latin */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l4qkHrFpiQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* arabic */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l5anHrRpiYlJ.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-/* latin */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l5anHrFpiQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* arabic */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l7KmHrRpiYlJ.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-/* latin */
-@font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l7KmHrFpiQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-        
         :root {
             --navy: #1a1a5e;
             --navy-light: #2a2a7a;
@@ -1914,356 +1803,173 @@
                 grid-template-columns: 1fr;
             }
         }
-       /* =========================
-   LEGAL MODE - QUICK STYLE
-   ========================= */
+                /* =========================
+        LEGAL MODE
+        ========================= */
 
-#legalModeSection {
-    width: 100%;
-}
+        #legalModeSection {
+            width: 100%;
+        }
 
-#legalModeSection .legal-container {
-    width: 100%;
-    box-sizing: border-box;
-}
+        #legalModeSection .legal-container {
+            width: 100%;
+        }
 
-/* العنوان */
-#legalModeSection h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 24px;
-    font-weight: 700;
-    color: #202060;
-    margin: 0 0 12px;
-}
+        #legalModeSection h2 {
+            text-align: center;
+            color: #202060;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-/* الوصف */
-#legalModeSection .legal-description {
-    text-align: center;
-    color: #666;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0 0 24px;
-}
+        #legalModeSection .legal-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
 
-/* خانة البحث */
-#legalModeSection .legal-search-box {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 10px;
-}
+        #legalModeSection .legal-search-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
 
-#legalModeSection .legal-search-box button {
-    width: 100%;
-    height: 48px;
-}
+        #legalModeSection .legal-search-box input {
+            width: 100%;
+            height: 48px;
+            box-sizing: border-box;
+            padding: 0 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #fafafa;
+            font-size: 16px;
+            text-align: right;
+            outline: none;
+        }
 
-/* Civil ID input */
-#legalModeSection .legal-search-box input {
-    width: 100%;
-    height: 48px;
-    box-sizing: border-box;
-    padding: 0 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    background: #fafafa;
-    font-size: 16px;
-    text-align: right;
-    outline: none;
-}
+        #legalModeSection .legal-search-box input:focus {
+            border-color: #25256f;
+            background: #fff;
+        }
 
-#legalModeSection .legal-search-box input:focus {
-    border-color: #25256f;
-    background: #fff;
-}
+        #legalModeSection .legal-search-box button {
+            width: 100%;
+            height: 48px;
+            border: none;
+            border-radius: 10px;
+            background: #25256f;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+        }
 
-/* زر البحث */
-#legalModeSection .legal-search-box button {
-    width: 90px;
-    height: 48px;
-    border: none;
-    border-radius: 10px;
-    background: #25256f;
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#legalModeSection .legal-search-box button:hover {
-    background: #1c1c5a;
-    transform: translateY(-1px);
-}
-
-/* حالة تحميل القائمة */
-#legalModeSection #legalStatus {
-    text-align: center;
-    font-size: 14px;
-    color: #555;
-    margin: 8px 0 16px;
-}
-
-/* =========================
-   LEGAL RESULT CARD
-   ========================= */
-
-#legalResultsArea {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-#legalResultsArea .customer-info-title {
-    text-align: center;
-    color: #202060;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-/* بطاقة العميل */
-#legalResultsArea .legal-customer-card {
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid #e1e1e1;
-    border-radius: 14px;
-    padding: 18px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-}
-
-/* عنوان النتيجة */
-#legalResultsArea .legal-card-title {
-    text-align: center;
-    background: #fff8e5;
-    border: 2px solid #e1b51d;
-    border-radius: 10px;
-    color: #555;
-    font-size: 17px;
-    font-weight: 700;
-    padding: 12px;
-    margin-bottom: 16px;
-}
-
-/* المعلومات */
-#legalResultsArea .legal-details {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-/* كل معلومة */
-#legalResultsArea .legal-detail {
-    background: #f8f9fa;
-    border: 1px solid #e2e2e2;
-    border-radius: 9px;
-    padding: 11px 13px;
-    min-width: 0;
-    box-sizing: border-box;
-}
-
-#legalResultsArea .legal-detail span {
-    display: block;
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 4px;
-}
-
-#legalResultsArea .legal-detail strong {
-    display: block;
-    color: #202060;
-    font-size: 15px;
-    word-break: break-word;
-}
-
-/* الاسم ياخذ العرض كامل */
-#legalResultsArea .legal-detail:nth-child(4) {
-    grid-column: 1 / -1;
-}
-
-/* =========================
-   NOT FOUND / WARNING
-   ========================= */
-
-#legalResultsArea .legal-message {
-    text-align: center;
-    border-radius: 12px;
-    padding: 22px 15px;
-    font-size: 16px;
-}
-
-#legalResultsArea .legal-message.not-found {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    color: #166534;
-}
-
-#legalResultsArea .legal-message.warning {
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
-    color: #9a3412;
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 600px) {
-
-    #legalModeSection .legal-search-box {
-        flex-direction: column;
-    }
-
-    #legalModeSection .legal-search-box button {
-        width: 100%;
-    }
-
-    #legalResultsArea .legal-details {
-        grid-template-columns: 1fr;
-    }
-
-    #legalResultsArea .legal-detail:nth-child(4) {
-        grid-column: auto;
-    }
-}
-        /* Legal Search Button */
-#legalModeSection .legal-search-btn {
-    width: 100%;
-    height: 48px;
-    margin-top: 8px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #25256f;
-    color: white;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#legalModeSection .legal-search-btn:hover {
-    background: #1c1c5a;
-    transform: translateY(-1px);
-}
-        /* =========================
-   LEGAL RESULTS ONLY
-   ========================= */
-
-#resultsSection.legal-active .summary-grid,
-#resultsSection.legal-active .eligibility-banner,
-#resultsSection.legal-active .customer-info,
-#resultsSection.legal-active .table-container,
-#resultsSection.legal-active .print-section {
-    display: none !important;
-}
-
-#resultsSection.legal-active #legalResultsArea {
-    display: block !important;
-}
+        #legalModeSection #legalStatus {
+            text-align: center;
+            margin: 12px 0;
+            color: #555;
+        }
     </style>
-<script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="21c480e8-3226-4d7d-a6cf-d12b47fcd662" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="21c480e8-3226-4d7d-a6cf-d12b47fcd662" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script></head>
-<body __processed_bfc88151-5828-401f-ba04-7bdf82f69998__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjMuMCIsInNjb3JlIjoyMDMwMDB9XQ==">
+</head>
+<body>
     <!-- Print Header (visible only when printing) -->
-    <div class="print-header" bis_skin_checked="1">
-        <div class="print-logo" bis_skin_checked="1">EASY<span>Buy</span></div>
-        <div class="print-date" bis_skin_checked="1">تقرير حاسبة التمويل - <span id="printDate">٨ سبتمبر ٢٠٢٦</span></div>
+    <div class="print-header">
+        <div class="print-logo">EASY<span>Buy</span></div>
+        <div class="print-date">تقرير حاسبة التمويل - <span id="printDate"></span></div>
     </div>
 
     <!-- Header -->
     <header class="header">
-        <div class="logo" bis_skin_checked="1">
-            <div bis_skin_checked="1">
-                <div class="logo-text" bis_skin_checked="1">EASY<span>Buy</span></div>
-                <div class="logo-sub" bis_skin_checked="1">Installments Services</div>
+        <div class="logo">
+            <div>
+                <div class="logo-text">EASY<span>Buy</span></div>
+                <div class="logo-sub">Installments Services</div>
             </div>
         </div>
-        <div class="header-title" bis_skin_checked="1">🖥️ نظام حاسبة التمويل الداخلي</div>
+        <div class="header-title">🖥️ نظام حاسبة التمويل الداخلي</div>
     </header>
 
-    <div class="container" bis_skin_checked="1">
+    <div class="container">
         <!-- Mode Switcher -->
-        <div class="mode-switcher" bis_skin_checked="1">
-            <button class="mode-btn active" onclick="switchMode(&#39;full&#39;)" id="btnModeFull">
+        <div class="mode-switcher">
+            <button class="mode-btn active" onclick="switchMode('full')" id="btnModeFull">
                 📋 حساب كامل (بالراتب)
             </button>
-            <button class="mode-btn" onclick="switchMode(&#39;quick&#39;)" id="btnModeQuick">
+            <button class="mode-btn" onclick="switchMode('quick')" id="btnModeQuick">
                 ⚡ حساب سريع (القسط فقط)
             </button>
-            <button class="mode-btn" onclick="switchMode(&#39;schedule&#39;)" id="btnModeSchedule">
+            <button class="mode-btn" onclick="switchMode('schedule')" id="btnModeSchedule">
                 📄 جدول أقساط العميل
             </button>
-            <button class="mode-btn" onclick="switchMode(&#39;products&#39;)" id="btnModeProducts">
+            <button class="mode-btn" onclick="switchMode('products')" id="btnModeProducts">
                 🛒 حساب بالمنتجات
             </button>
             <button class="mode-btn" onclick="switchMode('legal')" id="btnModeLegal">
-            ⚖️ فحص Legal
+                ⚖️ فحص Legal
             </button>
         </div>
 
-        <div class="main-grid" bis_skin_checked="1">
+        <div class="main-grid">
             <!-- Input Form -->
-            <div class="card" bis_skin_checked="1">
+            <div class="card">
                 <!-- FULL MODE -->
-                <div id="fullModeSection" bis_skin_checked="1" class="">
-                    <div class="card-title" bis_skin_checked="1">
-                        <div class="icon" bis_skin_checked="1">📝</div>
+                <div id="fullModeSection">
+                    <div class="card-title">
+                        <div class="icon">📝</div>
                         بيانات العميل
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">💵 مبلغ التمويل المطلوب</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="loanAmount" placeholder="أدخل المبلغ" min="1">
                             <span class="suffix">KWD</span>
                         </div>
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">💰 الراتب الشهري</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="salary" placeholder="أدخل الراتب" min="1">
                             <span class="suffix">KWD</span>
                         </div>
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">📋 مجموع الأقساط الحالية</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="currentInstallments" placeholder="أدخل مجموع الأقساط" min="0">
                             <span class="suffix">KWD</span>
                         </div>
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">🏢 نوع العميل</label>
-                        <div class="radio-group" bis_skin_checked="1">
-                            <label class="radio-option" onclick="selectType(this, &#39;government&#39;)">
-                                <input type="radio" name="clientType" value="government" checked="">
-                                <div class="radio-circle" bis_skin_checked="1"></div>
-                                <div bis_skin_checked="1">
-                                    <div class="radio-text" bis_skin_checked="1">موظف حكومي</div>
-                                    <div class="radio-sub" bis_skin_checked="1">نسبة الاستقطاع: 48%</div>
+                        <div class="radio-group">
+                            <label class="radio-option active" onclick="selectType(this, 'government')">
+                                <input type="radio" name="clientType" value="government" checked>
+                                <div class="radio-circle"></div>
+                                <div>
+                                    <div class="radio-text">موظف حكومي</div>
+                                    <div class="radio-sub">نسبة الاستقطاع: 48%</div>
                                 </div>
                             </label>
-                            <label class="radio-option active" onclick="selectType(this, &#39;private&#39;)">
+                            <label class="radio-option" onclick="selectType(this, 'private')">
                                 <input type="radio" name="clientType" value="private">
-                                <div class="radio-circle" bis_skin_checked="1"></div>
-                                <div bis_skin_checked="1">
-                                    <div class="radio-text" bis_skin_checked="1">قطاع خاص</div>
-                                    <div class="radio-sub" bis_skin_checked="1">نسبة الاستقطاع: 40%</div>
+                                <div class="radio-circle"></div>
+                                <div>
+                                    <div class="radio-text">قطاع خاص</div>
+                                    <div class="radio-sub">نسبة الاستقطاع: 40%</div>
                                 </div>
                             </label>
-                            <label class="radio-option" onclick="selectType(this, &#39;retired&#39;)">
+                            <label class="radio-option" onclick="selectType(this, 'retired')">
                                 <input type="radio" name="clientType" value="retired">
-                                <div class="radio-circle" bis_skin_checked="1"></div>
-                                <div bis_skin_checked="1">
-                                    <div class="radio-text" bis_skin_checked="1"> متقاعد </div>
-                                    <div class="radio-sub" bis_skin_checked="1">نسبة الاستقطاع: 30%</div>
+                                <div class="radio-circle"></div>
+                                <div>
+                                    <div class="radio-text"> متقاعد </div>
+                                    <div class="radio-sub">نسبة الاستقطاع: 30%</div>
                                 </div>
                             </label>
                         </div>
@@ -2275,20 +1981,20 @@
                 </div>
 
                 <!-- QUICK MODE -->
-                <div id="quickModeSection" class="hidden" bis_skin_checked="1">
-                    <div class="card-title" bis_skin_checked="1">
-                        <div class="icon" bis_skin_checked="1">⚡</div>
+                <div id="quickModeSection" class="hidden">
+                    <div class="card-title">
+                        <div class="icon">⚡</div>
                         حساب سريع
                     </div>
 
-                    <div class="quick-notice" bis_skin_checked="1">
+                    <div class="quick-notice">
                         <span class="icon">💡</span>
                         أدخل مبلغ التمويل فقط وسيتم حساب الأقساط لجميع المدد
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">💵 مبلغ التمويل المطلوب</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="quickLoanAmount" placeholder="أدخل المبلغ" min="1">
                             <span class="suffix">KWD</span>
                         </div>
@@ -2300,42 +2006,21 @@
                 </div>
 
                 <!-- PRODUCTS MODE -->
-                <div id="productsModeSection" class="hidden" bis_skin_checked="1">
-                    <div class="card-title" bis_skin_checked="1">
-                        <div class="icon" bis_skin_checked="1">🛒</div>
+                <div id="productsModeSection" class="hidden">
+                    <div class="card-title">
+                        <div class="icon">🛒</div>
                         قائمة المنتجات
                     </div>
 
-                    <div class="product-list" id="productList" bis_skin_checked="1">
+                    <div class="product-list" id="productList">
                         <!-- Products will be added here -->
-                    <div class="product-item" id="product-1" bis_skin_checked="1">
-                <input type="text" placeholder="اسم المنتج 1" id="productName-1">
-                <div class="product-price-wrapper" bis_skin_checked="1">
-                    <input type="number" class="product-price-input" placeholder="0" min="0" id="productPrice-1" oninput="updateProductsTotal()">
-                    <span class="price-suffix">KWD</span>
-                </div>
-                <button class="btn-remove-product" onclick="removeProduct(1)" title="حذف">×</button>
-            </div><div class="product-item" id="product-2" bis_skin_checked="1">
-                <input type="text" placeholder="اسم المنتج 2" id="productName-2">
-                <div class="product-price-wrapper" bis_skin_checked="1">
-                    <input type="number" class="product-price-input" placeholder="0" min="0" id="productPrice-2" oninput="updateProductsTotal()">
-                    <span class="price-suffix">KWD</span>
-                </div>
-                <button class="btn-remove-product" onclick="removeProduct(2)" title="حذف">×</button>
-            </div><div class="product-item" id="product-3" bis_skin_checked="1">
-                <input type="text" placeholder="اسم المنتج 3" id="productName-3">
-                <div class="product-price-wrapper" bis_skin_checked="1">
-                    <input type="number" class="product-price-input" placeholder="0" min="0" id="productPrice-3" oninput="updateProductsTotal()">
-                    <span class="price-suffix">KWD</span>
-                </div>
-                <button class="btn-remove-product" onclick="removeProduct(3)" title="حذف">×</button>
-            </div></div>
+                    </div>
 
                     <button class="btn-add-product" onclick="addProduct()">
                         ➕ إضافة منتج
                     </button>
 
-                    <div class="products-total" bis_skin_checked="1">
+                    <div class="products-total">
                         <span class="products-total-label">💰 المجموع الكلي</span>
                         <span class="products-total-value" id="productsTotal">0.000 <span>KWD</span></span>
                     </div>
@@ -2344,57 +2029,57 @@
                         ✅ استخدم المجموع كمبلغ تمويل
                     </button>
 
-                    <div class="section-divider" bis_skin_checked="1">أو أدخل مبلغ التمويل مباشرة</div>
+                    <div class="section-divider">أو أدخل مبلغ التمويل مباشرة</div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">💵 مبلغ التمويل</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="productsLoanAmount" placeholder="أدخل المبلغ" min="1">
                             <span class="suffix">KWD</span>
                         </div>
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">💰 الراتب الشهري</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="productsSalary" placeholder="أدخل الراتب" min="1">
                             <span class="suffix">KWD</span>
                         </div>
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">📋 مجموع الأقساط الحالية</label>
-                        <div class="input-suffix" bis_skin_checked="1">
+                        <div class="input-suffix">
                             <input type="number" class="form-input" id="productsCurrentInstallments" placeholder="أدخل مجموع الأقساط" min="0">
                             <span class="suffix">KWD</span>
                         </div>
                     </div>
 
-                    <div class="form-group" bis_skin_checked="1">
+                    <div class="form-group">
                         <label class="form-label">🏢 نوع العميل</label>
-                        <div class="radio-group" bis_skin_checked="1">
-                            <label class="radio-option active" onclick="selectTypeProducts(this, &#39;government&#39;)">
-                                <input type="radio" name="clientTypeProducts" value="government" checked="">
-                                <div class="radio-circle" bis_skin_checked="1"></div>
-                                <div bis_skin_checked="1">
-                                    <div class="radio-text" bis_skin_checked="1">موظف حكومي</div>
-                                    <div class="radio-sub" bis_skin_checked="1">نسبة الاستقطاع: 48%</div>
+                        <div class="radio-group">
+                            <label class="radio-option active" onclick="selectTypeProducts(this, 'government')">
+                                <input type="radio" name="clientTypeProducts" value="government" checked>
+                                <div class="radio-circle"></div>
+                                <div>
+                                    <div class="radio-text">موظف حكومي</div>
+                                    <div class="radio-sub">نسبة الاستقطاع: 48%</div>
                                 </div>
                             </label>
-                            <label class="radio-option" onclick="selectTypeProducts(this, &#39;private&#39;)">
+                            <label class="radio-option" onclick="selectTypeProducts(this, 'private')">
                                 <input type="radio" name="clientTypeProducts" value="private">
-                                <div class="radio-circle" bis_skin_checked="1"></div>
-                                <div bis_skin_checked="1">
-                                    <div class="radio-text" bis_skin_checked="1">قطاع خاص</div>
-                                    <div class="radio-sub" bis_skin_checked="1">نسبة الاستقطاع: 40%</div>
+                                <div class="radio-circle"></div>
+                                <div>
+                                    <div class="radio-text">قطاع خاص</div>
+                                    <div class="radio-sub">نسبة الاستقطاع: 40%</div>
                                 </div>
                             </label>
-                            <label class="radio-option" onclick="selectTypeProducts(this, &#39;retired&#39;)">
+                            <label class="radio-option" onclick="selectTypeProducts(this, 'retired')">
                                 <input type="radio" name="clientTypeProducts" value="retired">
-                                <div class="radio-circle" bis_skin_checked="1"></div>
-                                <div bis_skin_checked="1">
-                                    <div class="radio-text" bis_skin_checked="1"> متقاعد </div>
-                                    <div class="radio-sub" bis_skin_checked="1">نسبة الاستقطاع: 30%</div>
+                                <div class="radio-circle"></div>
+                                <div>
+                                    <div class="radio-text"> متقاعد </div>
+                                    <div class="radio-sub">نسبة الاستقطاع: 30%</div>
                                 </div>
                             </label>
                         </div>
@@ -2404,129 +2089,123 @@
                         🔍 احسب النتائج
                     </button>
                 </div>
+                <!-- LEGAL MODE -->
+                <div id="legalModeSection" class="hidden">
+                    <div class="legal-container">
+
+                        <h2>⚖️ فحص قائمة Legal</h2>
+
+                        <p class="legal-description">
+                            أدخل Civil ID للتحقق من وجود العميل في قائمة Legal
+                        </p>
+
+                        <div class="legal-search-box">
+                            <input
+                                type="text"
+                                id="legalCivilId"
+                                placeholder="أدخل Civil ID"
+                                inputmode="numeric"
+                                autocomplete="off"
+                            >
+
+                            <button onclick="searchLegalCustomer()">
+                                🔎 بحث
+                            </button>
+                        </div>
+
+                        <div id="legalStatus"></div>
+
+                        <div id="legalResult"></div>
+
+                    </div>
+                </div>
 
                 
                 <!-- SCHEDULE MODE -->
-                <div id="scheduleModeSection" class="hidden" bis_skin_checked="1">
-                    <div class="card-title" bis_skin_checked="1">
-                        <div class="icon" bis_skin_checked="1">📄</div>
+                <div id="scheduleModeSection" class="hidden">
+                    <div class="card-title">
+                        <div class="icon">📄</div>
                         جدول أقساط العميل
                     </div>
 
-                    <div class="quick-notice" bis_skin_checked="1">
+                    <div class="quick-notice">
                         <span class="icon">📁</span>
                         حمل ملف XML من النظام وسيتم عرض جدول الأقساط بشكل واضح
                     </div>
 
-                    <div class="schedule-upload-section" id="scheduleUploadSection" bis_skin_checked="1">
+                    <div class="schedule-upload-section" id="scheduleUploadSection">
                         <input type="file" id="scheduleXmlFile" accept=".xml" onchange="handleScheduleFile(event)">
                         <label for="scheduleXmlFile" class="schedule-upload-btn">📁 حمل ملف XML</label>
                         <p>اسحب الملف هنا أو اضغط للاختيار</p>
                     </div>
                 </div>
-                <div id="legalModeSection" class="hidden">
-
-    <div class="legal-container">
-
-        <h2>⚖️ فحص قائمة Legal</h2>
-
-        <p class="legal-description">
-            أدخل Civil ID للتحقق من وجود العميل في قائمة Legal
-        </p>
-
-        <div class="legal-search-box">
-    <input type="text" id="legalCivilId" placeholder="أدخل Civil ID" inputmode="numeric" autocomplete="off">
-</div>
-
-<div id="legalStatus"></div>
-
-<button class="legal-search-btn" onclick="searchLegalCustomer()">
-    🔎 بحث
-</button>
-
-        <div id="legalStatus"></div>
-
-        <div id="legalResult"></div>
-
-    </div>
-
-</div>
 <button class="btn btn-secondary" onclick="resetForm()">
                     🔄 مسح البيانات
                 </button>
             </div>
 
             <!-- Results -->
-            <div class="results-section show" id="resultsSection" bis_skin_checked="1">
-                <!-- LEGAL RESULTS -->
-<div id="legalResultsArea" style="display: none;">
-
-    <div class="customer-info-title">
-        ⚖️ نتيجة فحص قائمة Legal
-    </div>
-
-    <div id="legalResultsContent"></div>
-
-</div>
+            <div class="results-section" id="resultsSection">
                 <!-- Summary Cards -->
                 <div class="summary-grid" id="summaryGrid">
-                    <div class="summary-card" id="maxInstallmentCard" bis_skin_checked="1">
-                    
+                    <div class="summary-card" id="maxInstallmentCard">
+                        <div class="summary-label">الحد الأقصى للأقساط</div>
+                        <div class="summary-value" id="maxInstallment">-</div>
+                        <div class="summary-sub" id="maxInstallmentSub">KWD</div>
                     </div>
-                    <div class="summary-card warning" id="remainingCard" bis_skin_checked="1">
-                      
+                    <div class="summary-card warning" id="remainingCard">
+                        <div class="summary-label">المبلغ المتبقي للقسط الجديد</div>
+                        <div class="summary-value" id="remainingAmount">-</div>
+                        <div class="summary-sub" id="remainingSub">KWD</div>
                     </div>
-                    <div class="summary-card" id="totalInstallmentsCard" bis_skin_checked="1">
-                      
+                    <div class="summary-card" id="totalInstallmentsCard">
+                        <div class="summary-label"> إجمالي الأقساط قبل التمويل</div>
+                        <div class="summary-value" id="totalInstallments">-</div>
+                        <div class="summary-sub" id="totalInstallmentsSub">KWD</div>
                     </div>
                 </div>
 
-               <!-- Eligibility Banner -->
-<div class="eligibility-banner" id="eligibilityBanner">
-    <span class="icon" id="eligibilityIcon"></span>
-    <span id="eligibilityText"></span>
-</div>
+                <!-- Eligibility Banner -->
+                <div class="eligibility-banner" id="eligibilityBanner">
+                    <span class="icon" id="eligibilityIcon">✅</span>
+                    <span id="eligibilityText">-</span>
+                </div>
+
                 <!-- Customer Info -->
                 <div class="customer-info" id="customerInfoSection">
-    <div class="customer-info-title">
-        👤 ملخص بيانات العميل
-    </div>
-
-    <div class="info-grid">
-        <div class="info-item">
-            <span class="info-label">مبلغ التمويل</span>
-            <span class="info-value" id="infoLoanAmount"></span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">الراتب الشهري</span>
-            <span class="info-value" id="infoSalary"></span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">نوع العميل</span>
-            <span class="info-value" id="infoClientType"></span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">نسبة الاستقطاع</span>
-            <span class="info-value" id="infoPercentage"></span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">الأقساط الحالية</span>
-            <span class="info-value" id="infoCurrent"></span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">الحد الأقصى للقسط الجديد</span>
-            <span class="info-value" id="infoMaxNew"></span>
-        </div>
-    </div>
-</div>
+                    <div class="customer-info-title">
+                        👤 ملخص بيانات العميل
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">مبلغ التمويل</span>
+                            <span class="info-value" id="infoLoanAmount">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">الراتب الشهري</span>
+                            <span class="info-value" id="infoSalary">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">نوع العميل</span>
+                            <span class="info-value" id="infoClientType">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">نسبة الاستقطاع</span>
+                            <span class="info-value" id="infoPercentage">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">الأقساط الحالية</span>
+                            <span class="info-value" id="infoCurrent">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">الحد الأقصى للقسط الجديد</span>
+                            <span class="info-value" id="infoMaxNew">-</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Results Table -->
-                <div class="table-container" bis_skin_checked="1">
+                <div class="table-container">
                     <table>
                         <thead>
                             <tr>
@@ -2539,11 +2218,12 @@
                                 <th>الحالة</th>
                             </tr>
                         </thead>
-                        <tbody id="resultsTableBody"></tbody>
+                        <tbody id="resultsTableBody">
+                        </tbody>
                     </table>
                 </div>
 
-                <div class="print-section" bis_skin_checked="1">
+                <div class="print-section">
                     <button class="btn-print" onclick="window.print()">
                         🖨️ طباعة / حفظ PDF
                     </button>
@@ -2552,111 +2232,111 @@
         </div>
     
             <!-- Schedule Results (Hidden initially) -->
-            <div class="results-section" id="scheduleResultsSection" bis_skin_checked="1">
-                <div class="schedule-page" id="schedulePage" bis_skin_checked="1">
-                    <div class="schedule-content" bis_skin_checked="1">
+            <div class="results-section" id="scheduleResultsSection">
+                <div class="schedule-page" id="schedulePage">
+                    <div class="schedule-content">
                         <!-- Page Title -->
-                        <div class="schedule-page-title" bis_skin_checked="1">
+                        <div class="schedule-page-title">
                             <h2>جدول الأقساط الشهري</h2>
-                            <div class="subtitle" bis_skin_checked="1">Monthly Installment Schedule</div>
+                            <div class="subtitle">Monthly Installment Schedule</div>
                         </div>
 
                         <!-- Summary Cards -->
-                        <div class="schedule-summary-grid" bis_skin_checked="1">
-                            <div class="schedule-summary-card total" bis_skin_checked="1">
+                        <div class="schedule-summary-grid">
+                            <div class="schedule-summary-card total">
                                 <h3>💰 إجمالي القرض</h3>
-                                <div class="value" id="scheduleTotalLoan" bis_skin_checked="1">0.000</div>
-                                <div class="detail" id="scheduleInstallDetail" bis_skin_checked="1">0 قسط</div>
+                                <div class="value" id="scheduleTotalLoan">0.000</div>
+                                <div class="detail" id="scheduleInstallDetail">0 قسط</div>
                             </div>
-                            <div class="schedule-summary-card paid" bis_skin_checked="1">
+                            <div class="schedule-summary-card paid">
                                 <h3>✅ المدفوع</h3>
-                                <div class="value" id="scheduleTotalPaid" bis_skin_checked="1">0.000</div>
-                                <div class="detail" id="schedulePaidDetail" bis_skin_checked="1">0 قسط</div>
+                                <div class="value" id="scheduleTotalPaid">0.000</div>
+                                <div class="detail" id="schedulePaidDetail">0 قسط</div>
                             </div>
-                            <div class="schedule-summary-card unpaid" bis_skin_checked="1">
+                            <div class="schedule-summary-card unpaid">
                                 <h3>⏳ الباقي غير المدفوع</h3>
-                                <div class="value" id="scheduleTotalUnpaid" bis_skin_checked="1">0.000</div>
-                                <div class="detail" id="scheduleUnpaidDetail" bis_skin_checked="1">0 قسط</div>
+                                <div class="value" id="scheduleTotalUnpaid">0.000</div>
+                                <div class="detail" id="scheduleUnpaidDetail">0 قسط</div>
                             </div>
                         </div>
 
                         <!-- Info Bar -->
-                        <div class="schedule-info-bar" bis_skin_checked="1">
-                            <div bis_skin_checked="1">عدد الأقساط<br><span id="scheduleNoOfInstall">0</span></div>
-                            <div bis_skin_checked="1">الأقساط المدفوعة<br><span id="scheduleNoOfPaid">0</span></div>
-                            <div bis_skin_checked="1">الأقساط غير المدفوعة<br><span id="scheduleNoOfUnpaid">0</span></div>
-                            <div bis_skin_checked="1">رسوم التأخير<br><span id="scheduleLateFees">0.000</span></div>
-                            <div bis_skin_checked="1">رسوم أخرى<br><span id="scheduleOtherCharges">0.000</span></div>
+                        <div class="schedule-info-bar">
+                            <div>عدد الأقساط<br><span id="scheduleNoOfInstall">0</span></div>
+                            <div>الأقساط المدفوعة<br><span id="scheduleNoOfPaid">0</span></div>
+                            <div>الأقساط غير المدفوعة<br><span id="scheduleNoOfUnpaid">0</span></div>
+                            <div>رسوم التأخير<br><span id="scheduleLateFees">0.000</span></div>
+                            <div>رسوم أخرى<br><span id="scheduleOtherCharges">0.000</span></div>
                         </div>
 
                         
                         <!-- Compliance Analysis Section -->
-                        <div class="compliance-section" id="complianceSection" bis_skin_checked="1">
-                            <div class="compliance-header" bis_skin_checked="1">
+                        <div class="compliance-section" id="complianceSection">
+                            <div class="compliance-header">
                                 <span class="icon">📊</span>
-                                <div bis_skin_checked="1">
+                                <div>
                                     <h3>تحليل الالتزام بالسداد</h3>
-                                    <div class="sub" bis_skin_checked="1">Payment Compliance Analysis</div>
+                                    <div class="sub">Payment Compliance Analysis</div>
                                 </div>
                             </div>
 
                             <!-- Score & Classification -->
-                            <div class="score-container" bis_skin_checked="1">
-                                <div class="score-circle-wrapper" bis_skin_checked="1">
-                                    <div class="score-circle" id="scoreCircle" style="--score-color: #10b981; --score-deg: 0deg;" bis_skin_checked="1">
+                            <div class="score-container">
+                                <div class="score-circle-wrapper">
+                                    <div class="score-circle" id="scoreCircle" style="--score-color: #10b981; --score-deg: 0deg;">
                                         <span class="score-value" id="scoreValue">0%</span>
                                     </div>
                                     <span class="score-label">مؤشر الالتزام</span>
                                 </div>
-                                <div class="classification-badge" id="classificationBadge" bis_skin_checked="1">
-                                    <div id="classificationText" bis_skin_checked="1">-</div>
-                                    <div class="badge-sub" id="classificationSub" bis_skin_checked="1">-</div>
+                                <div class="classification-badge" id="classificationBadge">
+                                    <div id="classificationText">-</div>
+                                    <div class="badge-sub" id="classificationSub">-</div>
                                 </div>
                             </div>
 
                             <!-- Recommendation -->
-                            <div class="recommendation-box" id="recommendationBox" bis_skin_checked="1">
+                            <div class="recommendation-box" id="recommendationBox">
                                 <span class="rec-icon" id="recIcon">🤔</span>
-                                <div class="rec-text" bis_skin_checked="1">
-                                    <div id="recTitle" bis_skin_checked="1">-</div>
-                                    <div class="rec-reason" id="recReason" bis_skin_checked="1">-</div>
+                                <div class="rec-text">
+                                    <div id="recTitle">-</div>
+                                    <div class="rec-reason" id="recReason">-</div>
                                 </div>
                             </div>
 
                             <!-- Delay Stats -->
-                            <div class="delay-stats-grid" bis_skin_checked="1">
-                                <div class="delay-stat-card" bis_skin_checked="1">
-                                    <div class="stat-icon" bis_skin_checked="1">✅</div>
-                                    <div class="stat-value" id="statOnTime" bis_skin_checked="1">0</div>
-                                    <div class="stat-label" bis_skin_checked="1">في الوقت</div>
+                            <div class="delay-stats-grid">
+                                <div class="delay-stat-card">
+                                    <div class="stat-icon">✅</div>
+                                    <div class="stat-value" id="statOnTime">0</div>
+                                    <div class="stat-label">في الوقت</div>
                                 </div>
-                                <div class="delay-stat-card" bis_skin_checked="1">
-                                    <div class="stat-icon" bis_skin_checked="1">⚠️</div>
-                                    <div class="stat-value" id="statSlight" bis_skin_checked="1">0</div>
-                                    <div class="stat-label" bis_skin_checked="1">تأخر 1-2 شهر</div>
+                                <div class="delay-stat-card">
+                                    <div class="stat-icon">⚠️</div>
+                                    <div class="stat-value" id="statSlight">0</div>
+                                    <div class="stat-label">تأخر 1-2 شهر</div>
                                 </div>
-                                <div class="delay-stat-card" bis_skin_checked="1">
-                                    <div class="stat-icon" bis_skin_checked="1">🚨</div>
-                                    <div class="stat-value" id="statModerate" bis_skin_checked="1">0</div>
-                                    <div class="stat-label" bis_skin_checked="1">تأخر 3-5 شهر</div>
+                                <div class="delay-stat-card">
+                                    <div class="stat-icon">🚨</div>
+                                    <div class="stat-value" id="statModerate">0</div>
+                                    <div class="stat-label">تأخر 3-5 شهر</div>
                                 </div>
-                                <div class="delay-stat-card" bis_skin_checked="1">
-                                    <div class="stat-icon" bis_skin_checked="1">❌</div>
-                                    <div class="stat-value" id="statSevere" bis_skin_checked="1">0</div>
-                                    <div class="stat-label" bis_skin_checked="1">تأخر +6 شهر</div>
+                                <div class="delay-stat-card">
+                                    <div class="stat-icon">❌</div>
+                                    <div class="stat-value" id="statSevere">0</div>
+                                    <div class="stat-label">تأخر +6 شهر</div>
                                 </div>
                             </div>
 
                             <!-- Pattern Analysis -->
-                            <div class="pattern-box" id="patternBox" bis_skin_checked="1">
+                            <div class="pattern-box" id="patternBox">
                                 <h4>🔍 ملخص نمط السداد</h4>
-                                <div id="patternContent" bis_skin_checked="1">
+                                <div id="patternContent">
                                     <!-- Filled by JS -->
                                 </div>
                             </div>
 
                             <!-- Delay Detail Table -->
-                            <div class="delay-table-container" bis_skin_checked="1">
+                            <div class="delay-table-container">
                                 <table class="delay-table">
                                     <thead>
                                         <tr>
@@ -2675,7 +2355,7 @@
                             </div>
                         </div>
 <!-- Table -->
-                        <div class="schedule-table-container" bis_skin_checked="1">
+                        <div class="schedule-table-container">
                             <table class="schedule-table">
                                 <thead>
                                     <tr>
@@ -2694,14 +2374,14 @@
                         </div>
 
                         <!-- Footer -->
-                        <div class="schedule-footer" bis_skin_checked="1">
+                        <div class="schedule-footer">
                             <p>هذا التقرير تم إنشاؤه إلكترونياً من نظام EasyBuy</p>
-                            <p>تاريخ التقرير: <span class="report-date" id="scheduleReportDate">٨ سبتمبر ٢٠٢٦</span></p>
+                            <p>تاريخ التقرير: <span class="report-date" id="scheduleReportDate"></span></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="print-section" bis_skin_checked="1">
+                <div class="print-section">
                     <button class="btn-print" onclick="printScheduleOnly()">
                         🖨️ طباعة / حفظ PDF
                     </button>
@@ -2711,10 +2391,10 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content" bis_skin_checked="1">
-            <div class="footer-logo" bis_skin_checked="1">EASY<span>Buy</span></div>
-            <div class="footer-text" bis_skin_checked="1">© 2026 - Developed by Ayoub Saniba</div>
-            <div class="footer-contact" bis_skin_checked="1">
+        <div class="footer-content">
+            <div class="footer-logo">EASY<span>Buy</span></div>
+            <div class="footer-text">© 2026 - Developed by Ayoub Saniba</div>
+            <div class="footer-contact">
                 <span>📞 22203000</span>
                 <span>✉️ easybuy@easybuykw.com</span>
             </div>
@@ -2749,9 +2429,71 @@
             addProduct();
         });
 
+        const LEGAL_SHEET_ID = '1eebRp29Uc-ma3Fmgk-j-Ig6KOtD73RlT';
+        let legalCustomers = [];
+        let legalDataLoaded = false;
+
+        async function loadLegalCustomers() {
+            const status = document.getElementById('legalStatus');
+
+            try {
+                status.innerHTML = '⏳ جاري تحميل قائمة Legal...';
+
+                const url =
+                    `https://docs.google.com/spreadsheets/d/${LEGAL_SHEET_ID}/gviz/tq?tqx=out:json`;
+
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error('Failed to load Google Sheet');
+                }
+
+                const text = await response.text();
+
+                const jsonText = text.substring(
+                    text.indexOf('{'),
+                    text.lastIndexOf('}') + 1
+                );
+
+                const data = JSON.parse(jsonText);
+
+                const rows = data.table.rows;
+
+                legalCustomers = rows.map(row => {
+                    const cells = row.c.map(cell =>
+                        cell?.v !== undefined
+                            ? String(cell.v).trim()
+                            : ''
+                    );
+
+                    return {
+                        t24: cells[0] || '',
+                        acc: cells[1] || '',
+                        civilId: cells[2] || '',
+                        name: cells[3] || '',
+                        automaticNumber: cells[4] || '',
+                        fileStatus: cells[5] || '',
+                        collector: cells[6] || ''
+                    };
+                });
+
+                legalDataLoaded = true;
+
+                status.innerHTML =
+                    `✅ تم تحميل قائمة Legal بنجاح — ${legalCustomers.length.toLocaleString()} عميل`;
+
+            } catch (error) {
+                console.error('Legal Sheet Error:', error);
+
+                legalDataLoaded = false;
+
+                status.innerHTML =
+                    '❌ تعذر تحميل قائمة Legal';
+            }
+        }
+
         function switchMode(mode) {
             currentMode = mode;
-           
 
             // Update buttons
             document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
@@ -2774,17 +2516,16 @@
             const resultsSection = document.getElementById('resultsSection');
             const scheduleResultsSection = document.getElementById('scheduleResultsSection');
 
-            if (mode === 'schedule' || mode === 'legal') {
-    resultsSection.classList.remove('show');
-    scheduleResultsSection.classList.remove('show');
-
-} else {
-    scheduleResultsSection.classList.remove('show');
-
-    if (document.getElementById('resultsTableBody').innerHTML.trim() !== '') {
-        resultsSection.classList.add('show');
-    }
-}
+            if (mode === 'schedule') {
+                // Hide calculator results, show schedule if loaded
+                resultsSection.classList.remove('show');
+            } else {
+                // Hide schedule results, show calculator if available
+                scheduleResultsSection.classList.remove('show');
+                if (document.getElementById('resultsTableBody').innerHTML.trim() !== '') {
+                    resultsSection.classList.add('show');
+                }
+            }
         }
 
         function selectType(element, type) {
@@ -3041,10 +2782,6 @@
             document.getElementById('productsLoanAmount').value = '';
             document.getElementById('productsSalary').value = '';
             document.getElementById('productsCurrentInstallments').value = '';
-            document.getElementById('legalCivilId').value = '';
-            document.getElementById('legalResultsContent').innerHTML = '';
-            document.getElementById('legalResultsArea').style.display = 'none';
-            document.getElementById('resultsSection').classList.remove('legal-active');
             document.getElementById('resultsSection').classList.remove('show');
             document.getElementById('scheduleResultsSection').classList.remove('show');
             document.getElementById('scheduleTableBody').innerHTML = '';
@@ -3520,199 +3257,6 @@
                 document.body.classList.remove('print-schedule-only');
             }, 1000);
         }
-        // ===============================
-// LEGAL CUSTOMERS - GOOGLE SHEET
-// ===============================
-
-const LEGAL_SHEET_ID = '1eebRp29Uc-ma3Fmgk-j-Ig6KOtD73RlT';
-
-let legalCustomers = [];
-let legalDataLoaded = false;
-
-async function loadLegalCustomers() {
-
-    const status = document.getElementById('legalStatus');
-
-    try {
-
-        status.innerHTML = '⏳ جاري تحميل قائمة Legal...';
-
-        const url =
-            `https://docs.google.com/spreadsheets/d/${LEGAL_SHEET_ID}/gviz/tq?tqx=out:json`;
-
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error('Failed to load Google Sheet');
-        }
-
-        const text = await response.text();
-
-        const jsonText = text.substring(
-            text.indexOf('{'),
-            text.lastIndexOf('}') + 1
-        );
-
-        const data = JSON.parse(jsonText);
-
-        const rows = data.table.rows;
-
-        legalCustomers = rows.map(row => {
-
-            const cells = row.c.map(cell =>
-                cell?.v !== undefined
-                    ? String(cell.v).trim()
-                    : ''
-            );
-
-            return {
-                t24: cells[0] || '',
-                acc: cells[1] || '',
-                civilId: cells[2] || '',
-                name: cells[3] || '',
-                automaticNumber: cells[4] || '',
-                fileStatus: cells[5] || '',
-                collector: cells[6] || ''
-            };
-
-        });
-
-        legalDataLoaded = true;
-
-        status.innerHTML =
-            `✅ تم تحميل قائمة Legal بنجاح — ${legalCustomers.length.toLocaleString()} عميل`;
-
-    } catch (error) {
-
-        console.error('Legal Sheet Error:', error);
-
-        legalDataLoaded = false;
-
-        status.innerHTML =
-            '❌ تعذر تحميل قائمة Legal';
-
-    }
-}
-function searchLegalCustomer() {
-
-    const civilId = document
-        .getElementById('legalCivilId')
-        .value
-        .trim();
-
-    const result = document.getElementById('legalResultsContent');
-    const resultsSection = document.getElementById('resultsSection');
-    const legalResultsArea = document.getElementById('legalResultsArea');
-    resultsSection.classList.add('show');
-    legalResultsArea.style.display = 'block';
-    resultsSection.classList.add('legal-active');
-
-    if (!civilId) {
-        result.innerHTML = `
-            <div class="legal-message warning">
-                ⚠️ المرجو إدخال Civil ID
-            </div>
-        `;
-        return;
-    }
-
-    if (!legalDataLoaded) {
-        result.innerHTML = `
-            <div class="legal-message warning">
-                ⏳ قائمة Legal مازال ما تحملاتش، حاول من بعد لحظات
-            </div>
-        `;
-        return;
-    }
-
-    const customer = legalCustomers.find(
-        customer => customer.civilId === civilId
-    );
-
-    // العميل غير موجود
-    if (!customer) {
-
-        result.innerHTML = `
-            <div class="legal-message not-found">
-                <div class="legal-icon">✅</div>
-
-                <strong>
-                    غير موجود في قائمة Legal
-                </strong>
-
-                <p>
-                    Civil ID:
-                    <b>${escapeLegalHtml(civilId)}</b>
-                </p>
-            </div>
-        `;
-
-        return;
-    }
-
-    // العميل موجود
-    result.innerHTML = `
-        <div class="legal-customer-card">
-
-            <div class="legal-card-title">
-                ⚠️ العميل موجود في قائمة Legal
-            </div>
-
-            <div class="legal-details">
-
-                <div class="legal-detail">
-                    <span>T24</span>
-                    <strong>${escapeLegalHtml(customer.t24)}</strong>
-                </div>
-
-                <div class="legal-detail">
-                    <span>Acc</span>
-                    <strong>${escapeLegalHtml(customer.acc)}</strong>
-                </div>
-
-                <div class="legal-detail">
-                    <span>Civil ID</span>
-                    <strong>${escapeLegalHtml(customer.civilId)}</strong>
-                </div>
-
-                <div class="legal-detail">
-                    <span>NAME</span>
-                    <strong>${escapeLegalHtml(customer.name)}</strong>
-                </div>
-
-                <div class="legal-detail">
-                    <span>الرقم الآلي</span>
-                    <strong>${escapeLegalHtml(customer.automaticNumber)}</strong>
-                </div>
-
-                <div class="legal-detail">
-                    <span>حالة الملف</span>
-                    <strong>${escapeLegalHtml(customer.fileStatus)}</strong>
-                </div>
-
-                <div class="legal-detail">
-                    <span>COLLECTOR</span>
-                    <strong>${escapeLegalHtml(customer.collector)}</strong>
-                </div>
-
-            </div>
-
-        </div>
-    `;
-}
-
-
-// حماية البيانات القادمة من Google Sheet
-function escapeLegalHtml(value) {
-
-    return String(value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-
-}
 </script>
-
-</body></html>
+</body>
+</html>
