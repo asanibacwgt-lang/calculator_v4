@@ -2784,6 +2784,7 @@
 
         function switchMode(mode) {
             currentMode = mode;
+            resetForm();
 
             // Update buttons
             document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
@@ -3073,6 +3074,10 @@
             document.getElementById('productsLoanAmount').value = '';
             document.getElementById('productsSalary').value = '';
             document.getElementById('productsCurrentInstallments').value = '';
+            document.getElementById('legalCivilId').value = '';
+            document.getElementById('legalResultsContent').innerHTML = '';
+            document.getElementById('legalResultsArea').style.display = 'none';
+            document.getElementById('resultsSection').classList.remove('legal-active');
             document.getElementById('resultsSection').classList.remove('show');
             document.getElementById('scheduleResultsSection').classList.remove('show');
             document.getElementById('scheduleTableBody').innerHTML = '';
