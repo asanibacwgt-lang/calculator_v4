@@ -2756,9 +2756,9 @@ function escapeLegalHtml(value) {
 
             // Show selected section
             document.getElementById(mode + 'ModeSection').classList.remove('hidden');
-            if (mode === 'legal') {
-                loadLegalCustomers();
-            }
+            if (mode === 'legal' && !legalDataLoaded) {
+    loadLegalCustomers();
+}
 
             // Handle layout and visibility
             const resultsSection = document.getElementById('resultsSection');
