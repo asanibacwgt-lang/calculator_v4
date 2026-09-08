@@ -2146,6 +2146,16 @@
 
             <!-- Results -->
             <div class="results-section" id="resultsSection">
+                <!-- LEGAL RESULTS -->
+                <div id="legalResultsArea" style="display: none;">
+                
+                    <div class="customer-info-title">
+                        ⚖️ نتيجة فحص قائمة Legal
+                    </div>
+                
+                    <div id="legalResultsContent"></div>
+                
+                </div>
                 <!-- Summary Cards -->
                 <div class="summary-grid" id="summaryGrid">
                     <div class="summary-card" id="maxInstallmentCard">
@@ -2497,7 +2507,8 @@
         .value
         .trim();
 
-    const result = document.getElementById('legalResult');
+    const result = document.getElementById('legalResultsContent');
+    document.getElementById('resultsSection').classList.add('show');
 
     if (!civilId) {
         result.innerHTML = `
