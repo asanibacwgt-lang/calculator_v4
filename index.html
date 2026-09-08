@@ -1871,6 +1871,17 @@
             margin: 12px 0;
             color: #555;
         }
+        #resultsSection.legal-active .summary-grid,
+#resultsSection.legal-active .eligibility-banner,
+#resultsSection.legal-active .customer-info,
+#resultsSection.legal-active .table-container,
+#resultsSection.legal-active .print-section {
+    display: none !important;
+}
+
+#resultsSection.legal-active #legalResultsArea {
+    display: block !important;
+}
     </style>
 </head>
 <body>
@@ -2509,6 +2520,7 @@
 
     const result = document.getElementById('legalResultsContent');
     document.getElementById('resultsSection').classList.add('show');
+    document.getElementById('resultsSection').classList.add('legal-active');
 
     if (!civilId) {
         result.innerHTML = `
