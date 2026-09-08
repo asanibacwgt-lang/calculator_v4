@@ -3340,6 +3340,7 @@ function searchLegalCustomer() {
     const legalResultsArea = document.getElementById('legalResultsArea');
     resultsSection.classList.add('show');
     legalResultsArea.style.display = 'block';
+    resultsSection.classList.add('legal-active');
 
     if (!civilId) {
         result.innerHTML = `
