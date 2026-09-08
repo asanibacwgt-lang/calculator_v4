@@ -2468,16 +2468,17 @@
             const resultsSection = document.getElementById('resultsSection');
             const scheduleResultsSection = document.getElementById('scheduleResultsSection');
 
-            if (mode === 'schedule') {
-                // Hide calculator results, show schedule if loaded
-                resultsSection.classList.remove('show');
-            } else {
-                // Hide schedule results, show calculator if available
-                scheduleResultsSection.classList.remove('show');
-                if (document.getElementById('resultsTableBody').innerHTML.trim() !== '') {
-                    resultsSection.classList.add('show');
-                }
-            }
+            if (mode === 'schedule' || mode === 'legal') {
+    resultsSection.classList.remove('show');
+    scheduleResultsSection.classList.remove('show');
+
+} else {
+    scheduleResultsSection.classList.remove('show');
+
+    if (document.getElementById('resultsTableBody').innerHTML.trim() !== '') {
+        resultsSection.classList.add('show');
+    }
+}
         }
 
         function selectType(element, type) {
