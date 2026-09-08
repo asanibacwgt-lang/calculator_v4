@@ -2491,6 +2491,106 @@
                     '❌ تعذر تحميل قائمة Legal';
             }
         }
+        function searchLegalCustomer() {
+    const civilId = document
+        .getElementById('legalCivilId')
+        .value
+        .trim();
+
+    const result = document.getElementById('legalResult');
+
+    if (!civilId) {
+        result.innerHTML = `
+            <div class="legal-message warning">
+                ⚠️ المرجو إدخال Civil ID
+            </div>
+        `;
+        return;
+    }
+
+    if (!legalDataLoaded) {
+        result.innerHTML = `
+            <div class="legal-message warning">
+                ⏳ قائمة Legal مازال ما تحملاتش، حاول من بعد لحظات
+            </div>
+        `;
+        return;
+    }
+
+    const customer = legalCustomers.find(
+        customer => customer.civilId === civilId
+    );
+
+    if (!customer) {
+        result.innerHTML = `
+            <div class="legal-message not-found">
+                <div class="legal-icon">✅</div>
+                <strong>غير موجود في قائمة Legal</strong>
+                <p>
+                    Civil ID:
+                    <b>${escapeLegalHtml(civilId)}</b>
+                </p>
+            </div>
+        `;
+        return;
+    }
+
+    result.innerHTML = `
+        <div class="legal-customer-card">
+            <div class="legal-card-title">
+                ⚠️ العميل موجود في قائمة Legal
+            </div>
+
+            <div class="legal-details">
+
+                <div class="legal-detail">
+                    <span>T24</span>
+                    <strong>${escapeLegalHtml(customer.t24)}</strong>
+                </div>
+
+                <div class="legal-detail">
+                    <span>Acc</span>
+                    <strong>${escapeLegalHtml(customer.acc)}</strong>
+                </div>
+
+                <div class="legal-detail">
+                    <span>Civil ID</span>
+                    <strong>${escapeLegalHtml(customer.civilId)}</strong>
+                </div>
+
+                <div class="legal-detail">
+                    <span>NAME</span>
+                    <strong>${escapeLegalHtml(customer.name)}</strong>
+                </div>
+
+                <div class="legal-detail">
+                    <span>الرقم الآلي</span>
+                    <strong>${escapeLegalHtml(customer.automaticNumber)}</strong>
+                </div>
+
+                <div class="legal-detail">
+                    <span>حالة الملف</span>
+                    <strong>${escapeLegalHtml(customer.fileStatus)}</strong>
+                </div>
+
+                <div class="legal-detail">
+                    <span>COLLECTOR</span>
+                    <strong>${escapeLegalHtml(customer.collector)}</strong>
+                </div>
+
+            </div>
+        </div>
+    `;
+}
+
+function escapeLegalHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
 
         function switchMode(mode) {
             currentMode = mode;
