@@ -3332,7 +3332,11 @@ function searchLegalCustomer() {
         .value
         .trim();
 
-    const result = document.getElementById('legalResult');
+    const result = document.getElementById('legalResultsContent');
+    const resultsSection = document.getElementById('resultsSection');
+    const legalResultsArea = document.getElementById('legalResultsArea');
+    resultsSection.classList.add('show');
+    legalResultsArea.style.display = 'block';
 
     if (!civilId) {
         result.innerHTML = `
