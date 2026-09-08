@@ -1882,6 +1882,131 @@
 #resultsSection.legal-active #legalResultsArea {
     display: block !important;
 }
+        /* =========================
+   LEGAL RESULT DESIGN
+   ========================= */
+
+#legalResultsArea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#legalResultsArea .customer-info-title {
+    text-align: center;
+    color: #202060;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* بطاقة النتيجة */
+#legalResultsArea .legal-customer-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e2e5ea;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* العميل موجود في Legal */
+#legalResultsArea .legal-card-title {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 13px 15px;
+    margin-bottom: 15px;
+
+    background: #fff8e8;
+    border: 1px solid #f0c75e;
+    border-radius: 10px;
+
+    color: #8a6200;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* شبكة المعلومات */
+#legalResultsArea .legal-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+/* كل خانة */
+#legalResultsArea .legal-detail {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 12px 14px;
+
+    background: #f8f9fb;
+    border: 1px solid #e1e4e8;
+    border-radius: 9px;
+}
+
+/* اسم الحقل */
+#legalResultsArea .legal-detail span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #8a8f98;
+    font-size: 13px;
+}
+
+/* القيمة */
+#legalResultsArea .legal-detail strong {
+    display: block;
+
+    color: #202060;
+    font-size: 15px;
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+/* NAME ياخذ العرض كامل */
+#legalResultsArea .legal-detail:nth-child(4) {
+    grid-column: 1 / -1;
+}
+
+/* =========================
+   CUSTOMER NOT IN LEGAL
+   ========================= */
+
+#legalResultsArea .legal-message {
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 24px 18px;
+    border-radius: 12px;
+
+    text-align: center;
+    font-size: 16px;
+}
+
+#legalResultsArea .legal-message.not-found {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+#legalResultsArea .legal-message.warning {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    #legalResultsArea .legal-details {
+        grid-template-columns: 1fr;
+    }
+
+    #legalResultsArea .legal-detail:nth-child(4) {
+        grid-column: auto;
+    }
+}
     </style>
 </head>
 <body>
