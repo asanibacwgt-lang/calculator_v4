@@ -1839,6 +1839,113 @@
         #resultsSection.legal-active > :not(#legalResultsArea) {
     display: none !important;
 }
+        /* =========================
+   LEGAL RESULTS
+   ========================= */
+
+#legalResultsArea {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#legalResultsArea .customer-info-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+#legalResultsArea .legal-customer-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+#legalResultsArea .legal-card-title {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    padding: 13px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    background: #fff4e5;
+    color: #9a5b00;
+    border: 1px solid #f3d49a;
+}
+
+#legalResultsArea .legal-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+#legalResultsArea .legal-detail {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+#legalResultsArea .legal-detail span {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+#legalResultsArea .legal-detail strong {
+    font-size: 15px;
+    color: #1e293b;
+    word-break: break-word;
+}
+
+/* الاسم يكون على العرض الكامل */
+#legalResultsArea .legal-detail:nth-child(4) {
+    grid-column: 1 / -1;
+}
+
+/* حالة الملف */
+#legalResultsArea .legal-detail:nth-child(6) strong {
+    color: #9a5b00;
+}
+
+/* Collector */
+#legalResultsArea .legal-detail:nth-child(7) strong {
+    color: #3730a3;
+}
+
+
+/* =========================
+   LEGAL NOT FOUND
+   ========================= */
+
+#legalResultsArea .legal-message {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 14px;
+    font-size: 17px;
+}
+
+#legalResultsArea .legal-message.not-found {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+#legalResultsArea .legal-message.warning {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+}
     </style>
 <script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="21c480e8-3226-4d7d-a6cf-d12b47fcd662" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="21c480e8-3226-4d7d-a6cf-d12b47fcd662" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script></head>
 <body __processed_bfc88151-5828-401f-ba04-7bdf82f69998__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjMuMCIsInNjb3JlIjoyMDMwMDB9XQ==">
