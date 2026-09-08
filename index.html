@@ -1914,43 +1914,100 @@
                 grid-template-columns: 1fr;
             }
         }
-        #legalModeSection {
+       /* =========================
+   LEGAL MODE - QUICK STYLE
+   ========================= */
+
+#legalModeSection {
     width: 100%;
 }
 
 #legalModeSection .legal-container {
     width: 100%;
+    box-sizing: border-box;
 }
 
+/* العنوان */
 #legalModeSection h2 {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #202060;
+    margin: 0 0 12px;
 }
 
+/* الوصف */
 #legalModeSection .legal-description {
     text-align: center;
     color: #666;
-    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 24px;
 }
 
+/* خانة البحث */
 #legalModeSection .legal-search-box {
     display: flex;
+    flex-direction: row-reverse;
     gap: 10px;
     align-items: stretch;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
+/* Civil ID input */
 #legalModeSection .legal-search-box input {
     flex: 1;
     min-width: 0;
+    height: 48px;
+    box-sizing: border-box;
+    padding: 0 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 16px;
+    text-align: right;
+    outline: none;
+    transition: 0.2s;
 }
 
+#legalModeSection .legal-search-box input:focus {
+    border-color: #25256f;
+    background: #fff;
+}
+
+/* زر البحث */
 #legalModeSection .legal-search-box button {
-    white-space: nowrap;
+    width: 90px;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    background: #25256f;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
 }
-        #resultsSection.legal-active > :not(#legalResultsArea) {
-    display: none !important;
+
+#legalModeSection .legal-search-box button:hover {
+    background: #1c1c5a;
+    transform: translateY(-1px);
 }
-        /* =========================
-   LEGAL RESULTS
+
+/* حالة تحميل القائمة */
+#legalModeSection #legalStatus {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0 16px;
+}
+
+/* =========================
+   LEGAL RESULT CARD
    ========================= */
 
 #legalResultsArea {
@@ -1960,89 +2017,81 @@
 
 #legalResultsArea .customer-info-title {
     text-align: center;
+    color: #202060;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 18px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #e5e7eb;
 }
 
+/* بطاقة العميل */
 #legalResultsArea .legal-customer-card {
     width: 100%;
-    background: #fff;
-    border-radius: 14px;
-    padding: 20px;
     box-sizing: border-box;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
+/* عنوان النتيجة */
 #legalResultsArea .legal-card-title {
     text-align: center;
-    font-size: 19px;
-    font-weight: 700;
-    padding: 13px;
-    margin-bottom: 18px;
+    background: #fff8e5;
+    border: 2px solid #e1b51d;
     border-radius: 10px;
-    background: #fff4e5;
-    color: #9a5b00;
-    border: 1px solid #f3d49a;
+    color: #555;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    margin-bottom: 16px;
 }
 
+/* المعلومات */
 #legalResultsArea .legal-details {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
+/* كل معلومة */
 #legalResultsArea .legal-detail {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    background: #f8f9fa;
+    border: 1px solid #e2e2e2;
+    border-radius: 9px;
+    padding: 11px 13px;
     min-width: 0;
+    box-sizing: border-box;
 }
 
 #legalResultsArea .legal-detail span {
+    display: block;
+    color: #777;
     font-size: 13px;
-    color: #64748b;
-    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 #legalResultsArea .legal-detail strong {
+    display: block;
+    color: #202060;
     font-size: 15px;
-    color: #1e293b;
     word-break: break-word;
 }
 
-/* الاسم يكون على العرض الكامل */
+/* الاسم ياخذ العرض كامل */
 #legalResultsArea .legal-detail:nth-child(4) {
     grid-column: 1 / -1;
 }
 
-/* حالة الملف */
-#legalResultsArea .legal-detail:nth-child(6) strong {
-    color: #9a5b00;
-}
-
-/* Collector */
-#legalResultsArea .legal-detail:nth-child(7) strong {
-    color: #3730a3;
-}
-
-
 /* =========================
-   LEGAL NOT FOUND
+   NOT FOUND / WARNING
    ========================= */
 
 #legalResultsArea .legal-message {
     text-align: center;
-    padding: 30px 20px;
-    border-radius: 14px;
-    font-size: 17px;
+    border-radius: 12px;
+    padding: 22px 15px;
+    font-size: 16px;
 }
 
 #legalResultsArea .legal-message.not-found {
@@ -2055,6 +2104,29 @@
     background: #fff7ed;
     border: 1px solid #fed7aa;
     color: #9a3412;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    #legalModeSection .legal-search-box {
+        flex-direction: column;
+    }
+
+    #legalModeSection .legal-search-box button {
+        width: 100%;
+    }
+
+    #legalResultsArea .legal-details {
+        grid-template-columns: 1fr;
+    }
+
+    #legalResultsArea .legal-detail:nth-child(4) {
+        grid-column: auto;
+    }
 }
     </style>
 <script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="21c480e8-3226-4d7d-a6cf-d12b47fcd662" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="21c480e8-3226-4d7d-a6cf-d12b47fcd662" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script></head>
